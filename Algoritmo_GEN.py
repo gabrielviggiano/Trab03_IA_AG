@@ -1,6 +1,8 @@
 import random
 import math
 
+###### Autores: Gabriel Marchezi e Gabriel Viggiano ######
+
 #Inicializa a população com valores aleatórios
 def InicializarPopulação (numPop):
 	listaPop = []
@@ -19,25 +21,48 @@ def Torneio(populacao):
 		pai2 = populacao[random.randint(0,len(populacao)-1)]
 		while (pai1 == pai2):
 			pai2 = populacao[random.randint(0, len(populacao)-1)]
-		pt_pai1 = Avalia_Individuo(pai1)
-		pt_pai2 = Avalia_Individuo(pai2)
-		if pt_pai1 < pt_pai2:
+		if Avalia_Individuo(pai1) < Avalia_Individuo(pai2):
 			lista_torneio.append(pai1)
 		else:
 			lista_torneio.append(pai2)
 	return lista_torneio
 
 
+def Crossover(lst_pais, taxa):
+	lst_filhos = []
+	for i in range(0,len(lst_pais),2):
+		if(random.randint(1,100) <= taxa):
+			ponto = random.randint(0,len(lst_pais[i])-1)
+			filho1 = lst_pais[i][:ponto] + lst_pais[i+1][ponto:]
+			filho2 = lst_pais[i][ponto:] + lst_pais[i+1][:ponto]
+		else:
+			filho1 = lst_pais[i]
+			filho2 = lst_pais[i+1]
+		lst_filhos.append(filho1)
+		lst_filhos.append(filho2)
+	return lst_filhos
 
-def Melhor_Pior (populacao):
+def Mutacao (lst_filhos, taxa):
+	lst_mutada = []
+	for filho in lst_filhos:
+		for bit in filho:
+			if(random.randint(1,80) <= taxa):
+				if(bit == '1'):
+					bit = '0'
+				else:
+					bit = '1'
+		lst_mutada.append(filho)
+	return lst_mutada
+
+#Recebe uma lista de individuos e retorna uma lista com os individuos com melhor e pior aptidão
+def Melhor_Pior (lst_ind):
 	lista = []
-	melhor = populacao[0]
-	pior = populacao[0]
-	for individuo in populacao:
-		pt_individuo = Avalia_Individuo(individuo)
-		if (pt_individuo < Avalia_Individuo(melhor)):
+	melhor = lst_ind[0]
+	pior = lst_ind[0]
+	for individuo in lst_ind:
+		if (Avalia_Individuo(individuo) < Avalia_Individuo(melhor)):
 			melhor = individuo
-		if(pt_individuo > Avalia_Individuo(pior)):
+		if(Avalia_Individuo(individuo) > Avalia_Individuo(pior)):
 			pior = individuo
 	lista.append(melhor)
 	lista.append(pior)
@@ -91,8 +116,12 @@ def main():
 	print("--------------------------------------------------------------------------")
 	lista3 = Melhor_Pior(lista)
 	print(lista3)
-
-
+	print("--------------------------------------------------------------------------")
+	lista4 = Crossover(lista,75)
+	print(lista4)
+	print("--------------------------------------------------------------------------")
+	lista5 = Mutacao(lista4,80)
+	print(lista5)
 
 
 if __name__ == '__main__':
