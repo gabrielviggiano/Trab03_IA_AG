@@ -30,13 +30,3 @@ Dito isso, vamos ao código:
 # Bibliografia
 https://pt.wikipedia.org/wiki/Algoritmo_genético
 
-
-
-
-
-
-
-
-Links estudo:
-
-http://conteudo.icmc.usp.br/pessoas/andre/research/genetic/
