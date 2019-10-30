@@ -19,9 +19,12 @@ O problema proposto é realizar a implementação do algoritmo genético a fim d
 ![Alt text](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/funcao2.png?raw=true "funcao algoritmo genetico")<br>
 
 Vale ressaltar que para o modo de seleção, iremos utilizar o "Torneio".
+A taxa de Crossover será de 60%, a taxa de mutação de 1%.
 # Implementação
 Para a implementação do Algoritmo Genético, foi utilizada a linguagem de programação Python, essa que vem ganhando bastante popularidade na área de de Inteligência Artificial, por ser uma linguagem de fácil aprendizado e com alto nível de produtividade. E também pelo fato de podermos gerar gráficos através da biblioteca Matplotlib, visto que para esse trabalho, os resultados são de extrema importância.
 Dito isso, vamos ao código:
+
+
 
 ### Trechos mais Importantes
 
