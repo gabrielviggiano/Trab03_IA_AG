@@ -28,9 +28,22 @@ Dito isso, vamos ao código:
 
 ### Trechos mais Importantes
 
+![Img inic](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/img_inicializar.JPG?raw=true)
+![Alt text](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/img_BtDDtB.JPG?raw=true)
+![Img melhor](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/img_melhor_pior.JPG?raw=true)
+![Img torneio](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/img_torneio.JPG?raw=true)
+![Img crossover](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/img_crossover.JPG?raw=true)
+![Img mutacao](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/img_mutacao.JPG?raw=true)
+![Img Algoritmo](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/img_algogen.JPG?raw=true)
+![Img main1](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/img_main1.JPG?raw=true)
+![Img main2](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/img_main2.JPG?raw=true)
+![Img main3](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/img_main3.JPG?raw=true)
 
 
 # Resultados e Análise
+
+![img grafico10](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/Grafico_10.png?raw=true)
+![Img grafico20](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/Grafico_20.png?raw=true)
 
 # Bibliografia
 https://pt.wikipedia.org/wiki/Algoritmo_genético
