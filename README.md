@@ -15,6 +15,7 @@ Algoritmos genéticos diferem dos algoritmos tradicionais de otimização em bas
 
 # Problema Proposto
 O problema proposto é realizar a implementação do algoritmo genético a fim de minimizar a função abaixo.
+
 ![Alt text](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/funcao2.png?raw=true "funcao algoritmo genetico")<br>
 
 Vale ressaltar que para o modo de seleção, iremos utilizar o "Torneio".
