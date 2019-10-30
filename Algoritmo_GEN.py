@@ -13,7 +13,7 @@ def InicializarPopulação (numPop):
 		numPop = numPop - 1
 	return listaPop
 
-
+#seleciona dos pais através do método torneio
 def Torneio(populacao):
 	lista_torneio = []
 	for i in range(len(populacao)):
@@ -25,7 +25,7 @@ def Torneio(populacao):
 			lista_torneio.append(pai2)
 	return lista_torneio
 
-
+#Aplica o Crossover com uma taxa passada por parametro de maneira uniforme ou não
 def Crossover(lst_pais, taxa, uniforme):
 	lst_filhos = []
 	for i in range(0,len(lst_pais),2):
@@ -108,7 +108,6 @@ def Algo_Gen(populacao, iteracoes, taxa_muta, taxa_cross, uniform_cross):
 		elite_it = Melhor_Pior(populacao)
 		if (Avalia_Individuo(elite_it[0]) < Avalia_Individuo(elite[0])):
 			elite[0] = elite_it[0]
-			print(Avalia_Individuo(elite[0]))
 		cont = 0
 		for individuo in populacao:
 			if (individuo == elite_it[1]):
@@ -128,13 +127,8 @@ def main():
 	taxa_cross = int(input("Digite a taxa de crossover: "))
 	uniform_cross = int(input("O crossover terá ponto uniforme?(1 para sim, 0 para não): "))
 	execucoes = int(input("Digite o número de execuções:"))
-
-	with open("saida.csv",'w', newline = '') as saida:
-		escrever = csv.writer(saida)
-		for i in range(10):
-			escrever.writerow([i, "teste", str(taxa_cross)])
-
-
+	
+	#Executa o Algoritmo Genético N vezes
 	exe_atual = 0
 	lst_exes = []
 	while(exe_atual < execucoes):
@@ -144,6 +138,7 @@ def main():
 		lst_exes.append(resultado)
 		exe_atual += 1
 
+	#Encontra os melhores resultados de todas as iterações em todas as execuções
 	lst_melhores_exe = []
 	for exe in lst_exes:
 		lst_melhores_ite = []
@@ -151,17 +146,16 @@ def main():
 			melhor = 1
 			for ind in ite:
 				if (Avalia_Individuo(ind) < melhor):
-					print(Avalia_Individuo(ind))
 					melhor = Avalia_Individuo(ind)
 			lst_melhores_ite.append(melhor)
 		lst_melhores_exe.append(lst_melhores_ite)
 
-
+	#Inicia a lista com as médias dos resultados preenchendo com zeros
 	lista_medias = []
 	for i in range(0,iteracoes):
 		lista_medias.append(0)
-	print(lista_medias)
 
+	#Calcula a média das iterações das execuções e guarda também a execução com melhor resultado
 	lst_melhor_result = [['']]
 	melhor = 1
 	for exe in lst_melhores_exe:
@@ -177,14 +171,11 @@ def main():
 			pos += 1	
 		if(cond == True):
 			lst_melhor_result[0] = temp
-	print(lst_melhores_exe)
 	print("melhor: " + str(melhor))
 	print(lst_melhor_result)
-
-
 	cont = 0
 	for i in lista_medias:
-		lista_medias[cont] = lista_medias[cont]/10
+		lista_medias[cont] = lista_medias[cont]/execucoes
 		cont += 1
 	print("Médias das iterações em "+ str(execucoes) + " execuções: ")
 	print(lista_medias)
