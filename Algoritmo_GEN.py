@@ -19,8 +19,6 @@ def Torneio(populacao):
 	for i in range(len(populacao)):
 		pai1 = populacao[random.randint(0,len(populacao)-1)]
 		pai2 = populacao[random.randint(0,len(populacao)-1)]
-		while (pai1 == pai2):
-			pai2 = populacao[random.randint(0, len(populacao)-1)]
 		if Avalia_Individuo(pai1) < Avalia_Individuo(pai2):
 			lista_torneio.append(pai1)
 		else:
@@ -28,13 +26,18 @@ def Torneio(populacao):
 	return lista_torneio
 
 
-def Crossover(lst_pais, taxa):
+def Crossover(lst_pais, taxa, uniforme):
 	lst_filhos = []
 	for i in range(0,len(lst_pais),2):
 		if(random.randint(1,100) <= taxa):
-			ponto = random.randint(0,len(lst_pais[i])-1)
-			filho1 = lst_pais[i][:ponto] + lst_pais[i+1][ponto:]
-			filho2 = lst_pais[i][ponto:] + lst_pais[i+1][:ponto]
+			if(uniforme == 0):
+				ponto = random.randint(0,len(lst_pais[i]))
+				filho1 = lst_pais[i][:ponto] + lst_pais[i+1][ponto:]
+				filho2 = lst_pais[i][ponto:] + lst_pais[i+1][:ponto]
+			else:
+				ponto = int(len(lst_pais[i])/2)
+				filho1 = lst_pais[i][:ponto] + lst_pais[i+1][ponto:]
+				filho2 = lst_pais[i][ponto:] + lst_pais[i+1][:ponto]
 		else:
 			filho1 = lst_pais[i]
 			filho2 = lst_pais[i+1]
@@ -45,13 +48,16 @@ def Crossover(lst_pais, taxa):
 def Mutacao (lst_filhos, taxa):
 	lst_mutada = []
 	for filho in lst_filhos:
+		b1n = ''
 		for bit in filho:
-			if(random.randint(1,80) <= taxa):
+			if(random.randint(1,100) <= taxa):
 				if(bit == '1'):
-					bit = '0'
+					b1n += '0'
 				else:
-					bit = '1'
-		lst_mutada.append(filho)
+					b1n += '1'
+			else:
+				b1n += bit
+		lst_mutada.append(b1n)
 	return lst_mutada
 
 #Recebe uma lista de individuos e retorna uma lista com os individuos com melhor e pior aptidão
@@ -69,14 +75,6 @@ def Melhor_Pior (lst_ind):
 	return lista
 
 
-def Algo_Gen(iteracoes ,populacao):
-	lista = []
-	contador = 0
-	otimo = 0
-	while(cont<iteracoes and otimo == 0):
-		
-		cont += cont
-	return 0
 
 # Converte um número decimal para um número binário de 10 bits
 def DecToBin(dec):
@@ -87,10 +85,7 @@ def DecToBin(dec):
 
 # Convente um número binário para um número decimal
 def BinToDec(b1n):
-	i = 0
-	while (b1n[i] =='0'):
-		i += 1
-	b1n = '0b' + b1n[i:]
+	b1n = '0b' + b1n
 	dec = int(b1n,2)
 	return dec
 
@@ -102,26 +97,97 @@ def Avalia_Individuo(individuo):
 	return resultado
 
 
+def Algo_Gen(populacao, iteracoes, taxa_muta, taxa_cross, uniform_cross):
+	elite = Melhor_Pior(populacao)
+	ite_atual = 0
+	lst_exe = []
+	while(ite_atual < iteracoes):
+		populacao = Torneio(populacao)
+		populacao = Crossover(populacao,60,1)
+		populacao = Mutacao(populacao,1)
+		elite_it = Melhor_Pior(populacao)
+		if (Avalia_Individuo(elite_it[0]) < Avalia_Individuo(elite[0])):
+			elite[0] = elite_it[0]
+			print(Avalia_Individuo(elite[0]))
+		cont = 0
+		for individuo in populacao:
+			if (individuo == elite_it[1]):
+				del(populacao[cont])
+				populacao.append(elite[0])
+			cont += 1
+		ite_atual +=1
+		lst_exe.append(populacao)
+	return lst_exe
+
+
+
 def main():
-	populacao = []
-	populacao = InicializarPopulação(10)
-	print(populacao)
-	#Algo_Gen(populacao)
-	lista = []
-	lista = Torneio(populacao)
-	print(lista)
-	print("--------------------------------------------------------------------------")
-	lista2 = Melhor_Pior(populacao)
-	print(lista2)	
-	print("--------------------------------------------------------------------------")
-	lista3 = Melhor_Pior(lista)
-	print(lista3)
-	print("--------------------------------------------------------------------------")
-	lista4 = Crossover(lista,75)
-	print(lista4)
-	print("--------------------------------------------------------------------------")
-	lista5 = Mutacao(lista4,80)
-	print(lista5)
+	numpop = int(input("Digite a tamanho da população: "))
+	iteracoes = int(input("Digite o número de iterações: "))
+	taxa_muta = int(input("Digite a taxa de mutação: "))
+	taxa_cross = int(input("Digite a taxa de crossover: "))
+	uniform_cross = int(input("O crossover terá ponto uniforme?(1 para sim, 0 para não): "))
+	execucoes = int(input("Digite o número de execuções:"))
+
+	with open("saida.csv",'w', newline = '') as saida:
+		escrever = csv.writer(saida)
+		for i in range(10):
+			escrever.writerow([i, "teste", str(taxa_cross)])
+
+
+	exe_atual = 0
+	lst_exes = []
+	while(exe_atual < execucoes):
+		populacao_inic = []
+		populacao_inic = InicializarPopulação(numpop)
+		resultado = Algo_Gen(populacao_inic, iteracoes, taxa_muta, taxa_cross, uniform_cross)
+		lst_exes.append(resultado)
+		exe_atual += 1
+
+	lst_melhores_exe = []
+	for exe in lst_exes:
+		lst_melhores_ite = []
+		for ite in exe:
+			melhor = 1
+			for ind in ite:
+				if (Avalia_Individuo(ind) < melhor):
+					print(Avalia_Individuo(ind))
+					melhor = Avalia_Individuo(ind)
+			lst_melhores_ite.append(melhor)
+		lst_melhores_exe.append(lst_melhores_ite)
+
+
+	lista_medias = []
+	for i in range(0,iteracoes):
+		lista_medias.append(0)
+	print(lista_medias)
+
+	lst_melhor_result = [['']]
+	melhor = 1
+	for exe in lst_melhores_exe:
+		pos = 0
+		temp = []
+		cond = False
+		for result in exe:
+			if(result < melhor):
+				cond = True
+				melhor = result
+			temp.append(result)
+			lista_medias[pos] += result
+			pos += 1	
+		if(cond == True):
+			lst_melhor_result[0] = temp
+	print(lst_melhores_exe)
+	print("melhor: " + str(melhor))
+	print(lst_melhor_result)
+
+
+	cont = 0
+	for i in lista_medias:
+		lista_medias[cont] = lista_medias[cont]/10
+		cont += 1
+	print("Médias das iterações em "+ str(execucoes) + " execuções: ")
+	print(lista_medias)
 
 
 if __name__ == '__main__':
