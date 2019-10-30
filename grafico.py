@@ -30,6 +30,6 @@ else:
 	matplotlib.pyplot.xlabel("Iterações")
 	matplotlib.pyplot.ylabel("Média")
 	matplotlib.pyplot.legend()
-	matplotlib.pyplot.xlim(1, 10)
-	matplotlib.pyplot.ylim(-17.00,-12.00)
+	matplotlib.pyplot.xlim(1,20)
+	matplotlib.pyplot.ylim(-17,-12)
 	matplotlib.pyplot.show()
