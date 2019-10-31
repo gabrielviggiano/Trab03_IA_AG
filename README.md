@@ -33,12 +33,22 @@ Dito isso, vamos ao código:
 #### Recebe como parâmetro o número de indivíduos que irá compor a população. Em loop vai criando os indivíduos, composto por um gene binário de 10 bits, e adicionando-os em um lista que representa a população. 
 ![Img inic](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/img_inicializar.JPG?raw=true)
 ### Funções de conversão para Decimal-Binário e Binário-Decimal
-#### Funções auxiliares responsáveis pela conversão entre bases binário e decimal
+#### Funções auxiliares responsáveis pela conversão entre as bases binária e decimal
 ![Img BinárioDec](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/img_BtDDtB.JPG?raw=true)
+### Função Melhor_Pior
+#### Recebe como parâmetro um lista de população e retorna o indivíduo com melhor e pior aptidão
 ![Img melhor](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/img_melhor_pior.JPG?raw=true)
+### Função Torneio
+#### Recebe como parâmetro uma lista de população e retorna uma lista de pais selecionados do mesmo tamanho da população recebida como parâmetro. Os possíveis pais são selecionados aleatoriamente de 2 em 2 e o que possuir a melhor aptidão é escolhido como pai
 ![Img torneio](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/img_torneio.JPG?raw=true)
+### Função Crossover
+#### Responsável por gerar uma nova população. Recebe como parametro a lista de pais escolhidos no torneio, de 2 em 2 os pais são selecionados, é aplicada uma taxa de crossover e caso a taxa seja satisfeita os filhos são gerados através da mistura dos genes dos pais, caso contrário os filhos serão cópias dos seus pais.
 ![Img crossover](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/img_crossover.JPG?raw=true)
+### Função Mutacao
+#### Recebe como parâmetro uma taxa de mutação, percorre os genes dos indivíduos e caso a taxa satisfaça a condição, inverte o bit do indivíduo
 ![Img mutacao](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/img_mutacao.JPG?raw=true)
+### Função Algo_Gen
+####
 ![Img Algoritmo](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/img_algogen.JPG?raw=true)
 ![Img main1](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/img_main1.JPG?raw=true)
 ![Img main2](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/img_main2.JPG?raw=true)
