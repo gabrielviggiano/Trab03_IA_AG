@@ -26,10 +26,15 @@ Dito isso, vamos ao código:
 
 
 
-### Trechos mais Importantes
+## Trechos mais Importantes
 
+
+### Função InicializarPopulação
+#### Recebe como parâmetro o número de indivíduos que irá compor a população. Em loop vai criando os indivíduos, composto por um gene binário de 10 bits, e adicionando-os em um lista que representa a população. 
 ![Img inic](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/img_inicializar.JPG?raw=true)
-![Alt text](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/img_BtDDtB.JPG?raw=true)
+### Funções de conversão para Decimal-Binário e Binário-Decimal
+#### Funções auxiliares responsáveis pela conversão entre bases binário e decimal
+![Img BinárioDec](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/img_BtDDtB.JPG?raw=true)
 ![Img melhor](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/img_melhor_pior.JPG?raw=true)
 ![Img torneio](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/img_torneio.JPG?raw=true)
 ![Img crossover](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/img_crossover.JPG?raw=true)
