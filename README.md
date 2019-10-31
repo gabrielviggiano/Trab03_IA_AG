@@ -62,9 +62,9 @@ Dito isso, vamos ao código:
 
 
 # Resultados
-### Gráfico de 10 execuções do algoritmo genético com 10 iterações e populações de 10 indivíduos
+### Gráfico de 10 execuções do algoritmo genético com 10 iterações e populações de 10 indivíduos, melhor valor: -16.88
 ![img grafico10](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/Grafico_10.png?raw=true)
-### Gráfico de 10 execuções do algoritmo genético com 20 iterações e populações de 10 indivíduos
+### Gráfico de 10 execuções do algoritmo genético com 20 iterações e populações de 10 indivíduos, melhor valor: -16.88
 ![Img grafico20](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/Grafico_20.png?raw=true)
 
 # Bibliografia
