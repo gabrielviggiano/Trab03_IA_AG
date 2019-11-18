@@ -74,6 +74,30 @@ Dito isso, vamos ao código:
 ## Média: -16.622
 #### Taxa de mutação: 60%, taxa de crossover: 80%
 ![img media10](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/Media_10.PNG?raw=true)
+
+
+# Versão 2 do trabalho
+### Alterações no Crossover e Mutação
+
+Nessa versão utilizamos um crossover aritmético e uma mutação de limite
+
+
+## Mudanças no códigos
+
+![img_codigo_v2](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/img_mudancas_v2.JPG?raw=true)
+
+
+## Resultados
+### Gráfico de 10 execuções do algoritmo genético com 10 iterações e populações de 10 indivíduos, melhor valor: -16.876
+![img grafico10_v2](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Grafico_10_v2.png?raw=true)
+### Gráfico de 10 execuções do algoritmo genético com 20 iterações e populações de 10 indivíduos, melhor valor: -16.876
+![Img grafico20_v2](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Grafico_20_v2.png?raw=true)
+
+### Melhor média de 10 execuções com 10 Iterações
+## Média: -15.106
+#### Taxa de mutação: 60%, taxa de crossover: 80%
+![img media10](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/img_RESULTADO_v2.JPG?raw=true)
+
 # Bibliografia
 
 https://pt.wikipedia.org/wiki/Algoritmo_genético
