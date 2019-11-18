@@ -35,6 +35,9 @@ Dito isso, vamos ao código:
 ### Funções de conversão para Decimal-Binário e Binário-Decimal
 #### Funções auxiliares responsáveis pela conversão entre as bases binária e decimal
 ![Img BinárioDec](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/img_BtDDtB.JPG?raw=true)
+### Função Avalia_Individuo
+#### Faz o cálculo da pontuação do indivíduo utilizando a função f(x) = Cos(x)*x+2
+![Img Avalia](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/img_avalia.PNG?raw=true)
 ### Função Melhor_Pior
 #### Recebe como parâmetro um lista de população e retorna o indivíduo com melhor e pior aptidão
 ![Img melhor](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/img_melhor_pior.JPG?raw=true)
@@ -62,11 +65,15 @@ Dito isso, vamos ao código:
 
 
 # Resultados
-### Gráfico de 10 execuções do algoritmo genético com 10 iterações e populações de 10 indivíduos
+### Gráfico de 10 execuções do algoritmo genético com 10 iterações e populações de 10 indivíduos, melhor valor: -16.876
 ![img grafico10](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/Grafico_10.png?raw=true)
-### Gráfico de 10 execuções do algoritmo genético com 20 iterações e populações de 10 indivíduos
+### Gráfico de 10 execuções do algoritmo genético com 20 iterações e populações de 10 indivíduos, melhor valor: -16.876
 ![Img grafico20](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/Grafico_20.png?raw=true)
 
+### Melhor média de 10 execuções com 10 Iterações
+## Média: -16.622
+#### Taxa de mutação: 60%, taxa de crossover: 80%
+![img media10](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/Imagens/Media_10.PNG?raw=true)
 # Bibliografia
 
 https://pt.wikipedia.org/wiki/Algoritmo_genético
