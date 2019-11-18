@@ -95,7 +95,7 @@ Nessa versão utilizamos um crossover aritmético e uma mutação de limite
 
 ### Melhor média de 10 execuções com 10 Iterações
 ## Média: -15.106
-#### Taxa de mutação: 60%, taxa de crossover: 80%
+#### Taxa de mutação: 20%, taxa de crossover: 60%
 ![img media10](https://github.com/gabrielviggiano/Trab03_IA_AG/blob/master/img_RESULTADO_v2.JPG?raw=true)
 
 # Bibliografia
